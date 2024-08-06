@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Question-14</title>
+</head>
+
+<body>
+    <h2>Pattern</h2>
+    <div id="pattern"></div>
+
+    <script>
+        function Pattern() {
+            let currentNumber = 1;
+            let patternHTML = '';
+
+            for (let i = 0; i < 5; i++) {
+
+                patternHTML += '&nbsp;'.repeat((4 - i) * 2);
+
+                for (let j = 0; j <= i; j++) {
+                    patternHTML += currentNumber + ' ';
+                    currentNumber++;
+                }
+
+                patternHTML += '<br>';
+            }
+
+            document.getElementById('pattern').innerHTML = patternHTML;
+        }
+
+        Pattern();
+    </script>
+</body>
+
+</html>

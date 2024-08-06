@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question-11</title>
+</head>
+<body>
+    <h2>Numbers from 1 to 10</h2>
+    <div id="result"></div>
+
+    <script>
+        function displayNumbers() {
+            let result = "";
+
+            for (let i = 1; i <= 10; i++) {
+                result += i;
+                if (i < 10) {
+                    result += "-";
+                }
+            }
+
+            document.getElementById('result').textContent = result;
+        }
+
+        displayNumbers();
+    </script>
+</body>
+</html>

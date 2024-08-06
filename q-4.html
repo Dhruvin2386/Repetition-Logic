@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-4</title>
+</head>
+
+<body>
+    <h3 id="Palindrome"></h3>
+
+    <script>
+        let number = prompt("Enter The Number for palindrome");
+        let i = 0;
+        let j = number.length - 1;
+        let isPalindrome = true;
+        let ans;
+
+        while (i < j) {
+            if (number[i] != number[j]) {
+                isPalindrome = false;
+                break;
+            }
+            i++;
+            j--;
+        }
+
+        if (isPalindrome) {
+            ans = number + ' is a Palindrome';
+        } else {
+            ans = number + ' is not a Palindrome';
+        }
+
+        document.getElementById('Palindrome').innerHTML = ans;
+
+    </script>
+</body>
+
+</html>

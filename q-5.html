@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-5</title>
+</head>
+
+<body>
+    <h3 id="fibonacci"></h3>
+    <h3 id="f-num"></h3>
+
+    <script>
+        var limit = 1000;
+        var num1 = 0, num2 = 1, nextTerm;
+
+        document.getElementById('fibonacci').innerHTML = 'Fibonacci series up to ' + limit + ' :'
+
+        while (num1 <= limit) {
+            document.getElementById('f-num').innerHTML += num1 + '<br>'
+            nextTerm = num1 + num2;
+            num1 = num2;
+            num2 = nextTerm;
+        }
+    </script>
+</body>
+
+</html>

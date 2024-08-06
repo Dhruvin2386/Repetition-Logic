@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question-10</title>
+</head>
+<body>
+    <h2>FizzBuzz from 1 to 100</h2>
+    <button onclick="FizzBuzz()">Run FizzBuzz</button>
+    <div id="result"></div>
+
+    <script>
+        function FizzBuzz() {
+            let number = 1;
+            let result = "";
+
+            do {
+                if (number % 3 === 0 && number % 5 === 0) {
+                    result += "Fizz Buzz<br>";
+                } else if (number % 3 === 0) {
+                    result += "Fizz<br>";
+                } else if (number % 5 === 0) {
+                    result += "Buzz<br>";
+                } else {
+                    result += number + "<br>";
+                }
+                number++;
+            } while (number <= 100);
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

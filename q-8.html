@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-8</title>
+</head>
+<body>
+    <h1>Disarium Number Checker</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="checkDisarium()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkDisarium() {
+            const num = parseInt(document.getElementById('numberInput').value);
+            const resultElement = document.getElementById('result');
+            
+            if (isNaN(num)) {
+                resultElement.textContent = "Please enter a valid number.";
+                return;
+            }
+
+            let sum = 0;
+            let temp = num;
+            let len = num.toString().length;
+
+            while (temp > 0) {
+                let digit = temp % 10;
+                sum += Math.pow(digit, len--);
+                temp = Math.floor(temp / 10);
+            }
+
+            if (sum === num) {
+                resultElement.textContent = `${num} is a Disarium number.`;
+            } else {
+                resultElement.textContent = `${num} is not a Disarium number.`;
+            }
+        }
+    </script>
+</body>
+</html>

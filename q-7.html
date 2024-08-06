@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question-7</title>
+</head>
+<body>
+    <h2>Magic Number Checker</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button id="checkButton">Check</button>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('checkButton').addEventListener('click', function() {
+            var num = parseInt(document.getElementById('numberInput').value);
+            var resultElement = document.getElementById('result');
+
+            if (isNaN(num) || num <= 0) {
+                resultElement.textContent = 'Please enter a valid positive number.';
+                return;
+            }
+
+            let sum = num;
+
+            while (sum >= 10) {
+                let temp = sum;
+                sum = 0;
+                while (temp > 0) {
+                    sum += temp % 10;
+                    temp = Math.floor(temp / 10);
+                }
+            }
+
+            // Check if the final single digit is 1
+            if (sum === 1) {
+                resultElement.textContent = num + ' is a magic number.';
+            } else {
+                resultElement.textContent = num + ' is not a magic number.';
+            }
+        });
+    </script>
+</body>
+</html>

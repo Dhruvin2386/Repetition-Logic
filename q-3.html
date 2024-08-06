@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-3</title>
+</head>
+<body>
+    
+    <h3 id="armstrong"></h3>
+
+
+    <script>
+        var number = parseInt(prompt("Enter The Number For checking Armstrong number"));
+        var sum = 0;
+        var temp = number;
+
+        while (temp > 0) {
+            var remainder = temp % 10;
+            sum += remainder ** 3;
+            temp = parseInt(temp / 10);
+        }
+        if (sum == number) {
+            document.getElementById('armstrong').innerHTML = number + ' is Armstrong Number.';
+        } else {
+            document.getElementById('armstrong').innerHTML = number + ' is not Armstrong Number.';
+        }
+    </script>
+</body>
+</html>
